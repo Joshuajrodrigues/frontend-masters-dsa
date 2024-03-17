@@ -32,16 +32,7 @@ class LinkedList {
 	getLength() {
 		return this.length;
 	}
-	get(index) {
-		if (index < 0 || index >= this.length) {
-			return null;
-		}
-		let current = this.head;
-		for (let i = 0; i < index; i++) {
-			current = current.next;
-		}
-		return current.data;
-	}
+
 	append(data) {
 		const newNodeItem = new NodeItem(data);
 		if (!this.head) {
@@ -53,6 +44,7 @@ class LinkedList {
 			}
 			current.next = newNodeItem;
 		}
+		this.length += 1;
 	}
 
 	print() {
@@ -65,6 +57,21 @@ class LinkedList {
 		result += "null";
 		console.log(result);
 	}
+
+	get(index) {
+		if (index >= this.length || index < 0) {
+			throw new Error("BAKAAA");
+		}
+		let current = this.head;
+
+		let i = 0;
+
+		while (i < index) {
+			current = current.next;
+			i++;
+		}
+		return current.data;
+	}
 }
 
 const list = new LinkedList();
@@ -72,3 +79,5 @@ list.append(1);
 list.append(2);
 list.append(3);
 list.print();
+
+console.log("second element is by 0 index", list.get(2));

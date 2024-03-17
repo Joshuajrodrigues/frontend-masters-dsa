@@ -18,7 +18,8 @@
 
 //  do while lo< hi
 
-export function binarySearch(arr, ele) {
+export function binarySearch(arrToSearch: number[], ele: number) {
+	const arr = arrToSearch.sort((a, b) => a - b);
 	let low = 0;
 	let high = arr.length - 1;
 

@@ -1,4 +1,4 @@
-function bubbleSort(arr) {
+export function bubbleSort(arr: number[]) {
 	/**
    *the main condition is
    *xi < xi+1 => sorted

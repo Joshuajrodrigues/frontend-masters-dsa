@@ -18,7 +18,7 @@
 
 //  do while lo< hi
 
-function binarySearch(arr, ele) {
+export function binarySearch(arr, ele) {
 	let low = 0;
 	let high = arr.length - 1;
 
@@ -38,5 +38,3 @@ function binarySearch(arr, ele) {
 
 	return false;
 }
-
-module.exports = binarySearch;

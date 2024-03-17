@@ -1,4 +1,5 @@
-const binarySearch = require("../binarySearch");
+import { expect, test } from "vitest";
+import { binarySearch } from "../binarySearch";
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 test("binary search", () => {

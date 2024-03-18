@@ -23,5 +23,3 @@ export function bubbleSort(arr: number[]) {
 	}
 	return arr;
 }
-const arr = [32, 4, 2, 43, 543];
-console.log(bubbleSort(arr));

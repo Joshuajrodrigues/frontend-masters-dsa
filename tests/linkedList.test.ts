@@ -17,4 +17,7 @@ describe("linked list", () => {
 	test("print", () => {
 		expect(ll.print()).toBe("4 => 1 => 2 => 3 => null");
 	});
+	test("remove by index", () => {
+		expect(ll.removeAt(1)).toBe(1);
+	});
 });

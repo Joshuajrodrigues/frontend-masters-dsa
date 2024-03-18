@@ -47,6 +47,29 @@ export class LinkedList<T> {
 		}
 		this.size++;
 	}
+	removeAt(index: number) {
+		if (index > this.size || index < 0) {
+			throw new Error(" INDEX ERROR");
+		}
+		let removedNode = null;
+		if (index === 0) {
+			removedNode = this.head?.data;
+			this.head = this.head?.next || null;
+		} else {
+			let current = this.head;
+			let count = 0;
+			while (count < index - 1) {
+				current = current?.next || null;
+				count++;
+			}
+			removedNode = current?.next?.data;
+			if (current) {
+				current.next = current?.next?.next || null;
+			}
+		}
+		this.size--;
+		return removedNode;
+	}
 	append(data: T) {
 		this.addAtIndex(this.getLength(), data);
 	}
